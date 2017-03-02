@@ -25,6 +25,8 @@ class CalcViewController: UIViewController  {
     @IBAction func switchAge(_ sender: UISlider) {
     result.age = Int(letSwitchAge.value)
     textRatioAge.text = String(result.ratioAge())
+    valueAge.text = String(letSwitchAge.value)
+    
     }
     //IBOutlet - хранит текущее значение
     @IBOutlet weak var letSwitchPower: UISlider!
@@ -33,8 +35,9 @@ class CalcViewController: UIViewController  {
     //@IBOutlet weak var letSwitchPower
     @IBAction func switchPower(_ sender: UISlider) {
     result.horsePwr = Int(letSwitchPower.value)
-        totalPrice.text = String(result.total)
+        totalPrice.text = String("Стоимость сраховки \(result.total)")
     textRatioPower.text = String(result.ratioPower())
+    valuePower.text = String(letSwitchPower.value)
     }
     
         @IBOutlet weak var textRatioAge: UITextField!
@@ -53,6 +56,8 @@ class CalcViewController: UIViewController  {
     }
  
     @IBOutlet weak var totalPrice: UILabel!
+    @IBOutlet weak var valueAge: UILabel!
+    @IBOutlet weak var valuePower: UILabel!
     
 //    func total(){
 //        totalPrice.text = String(result.total)
